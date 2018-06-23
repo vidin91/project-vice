@@ -1,0 +1,8 @@
+{
+  "name": "gulp_webpack_devserver",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1"
+  }
+}

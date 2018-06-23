@@ -1,0 +1,20 @@
+<div ng-controller="AppController">
+  {{message}}
+  <button ng-click="show = !show">Show</button>
+  <div ng-if="show">
+    <input type="text" ng-model="$parent.inputText"></input>
+    <button ng-click="newTodo()">Add</button>
+    <div ng-repeat="item in todos | filter:visibleFilter">
+      <input type="checkbox" ng-model="item.completed"></input>
+      {{item.text}}
+      <button ng-click="removeTodo(item.id)">remove</button>
+    </div>
+    <div class="footer">
+      {{completedNum}}
+      <button ng-click="filter()">All</button>
+      <button ng-click="filter('active')">Active</button>
+      <button ng-click="filter('completed')">Completed</button>
+      <button ng-click="removeCompleted()" ng-if="!visibleFilter.completed">Remove Completed</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1px solid;
+  height: 500px;
+  margin: 50px;
+}
+
+.grid-container .first-item {
+  background-color: red;
+}
+
+.grid-container .first-item {
+  background-color: blue;
+}

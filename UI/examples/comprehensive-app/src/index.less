@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .header {
+    flex-basis: 60px;
+    background-color: black;
+    color: white;
+  }
+  .content {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    .side-bar-nav {
+      background-color: grey;
+      flex-basis: 200px;
+      .side-bar-link {
+        padding: 10px;
+        cursor: pointer;
+        color: #feb52f;
+        font-weight: 600;
+      }
+    }
+    .main-content {
+      flex-grow: 1
+    }
+  }
+}

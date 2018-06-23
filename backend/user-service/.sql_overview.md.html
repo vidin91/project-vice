@@ -1,0 +1,739 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>E:\ProjectVice\backend\user-service\.sql_overview.md.html</title>
+
+
+<style type="text/css">
+body {
+	color: #333;
+	font: 13px/1.4 "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	background: transparent;
+	color: #4183c4;
+	text-decoration: none;
+}
+
+a:active,
+a:hover {
+	outline: 0 none;
+	text-decoration: underline;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+mark {
+	background: #ff0;
+	color: #000;
+}
+small {
+	font-size: 80%;
+}
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+img {
+	border: 0 none;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+figure {
+	margin: 1em 40px;
+}
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace,monospace;
+	font-size: 1em;
+}
+
+pre {
+	overflow: auto;
+	font: 12px Consolas,"Liberation Mono",Menlo,Courier,monospace;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.markdown-body {
+	padding: 30px;
+	font-size: 16px;
+	line-height: 1.6;
+	word-wrap: break-word;
+}
+
+.markdown-body>*:first-child {
+	margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+	margin-bottom: 0 !important;
+}
+
+.markdown-body .absent {
+	color: #c00;
+}
+
+.markdown-body .anchor {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	padding-right: 6px;
+	padding-left: 30px;
+	margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+	outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+	position: relative;
+	margin-top: 1em;
+	margin-bottom: 16px;
+	font-weight: bold;
+	line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+	display: none;
+	color: #000;
+	vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+	padding-left: 8px;
+	margin-left: -30px;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+	display: inline-block;
+}
+
+.markdown-body h1 tt,
+.markdown-body h1 code,
+.markdown-body h2 tt,
+.markdown-body h2 code,
+.markdown-body h3 tt,
+.markdown-body h3 code,
+.markdown-body h4 tt,
+.markdown-body h4 code,
+.markdown-body h5 tt,
+.markdown-body h5 code,
+.markdown-body h6 tt,
+.markdown-body h6 code {
+	font-size: inherit;
+}
+
+.markdown-body h1 {
+	padding-bottom: 0.3em;
+	font-size: 2.25em;
+	line-height: 1.2;
+	border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+	padding-bottom: 0.3em;
+	font-size: 1.75em;
+	line-height: 1.225;
+	border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+	font-size: 1.5em;
+	line-height: 1.43;
+}
+
+.markdown-body h4 {
+	font-size: 1.25em;
+}
+
+.markdown-body h5 {
+	font-size: 1em;
+}
+
+.markdown-body h6 {
+	font-size: 1em;
+	color: #777;
+}
+
+.markdown-body p,.markdown-body blockquote,
+.markdown-body ul,.markdown-body ol,
+.markdown-body dl,.markdown-body table,
+.markdown-body pre {
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+
+.markdown-body hr {
+	height: 4px;
+	padding: 0;
+	margin: 16px 0;
+	background-color: #e7e7e7;
+	border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+	padding-left: 2em;
+}
+
+.markdown-body ul.no-list,
+.markdown-body ol.no-list {
+	padding: 0;
+	list-style-type: none;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.markdown-body li>p {
+	margin-top: 16px;
+}
+
+.markdown-body dl {
+	padding: 0;
+}
+
+.markdown-body dl dt {
+	padding: 0;
+	margin-top: 16px;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.markdown-body dl dd {
+	padding: 0 16px;
+	margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+	padding: 0 15px;
+	color: #777;
+	border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+	margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+	margin-bottom: 0;
+}
+
+.markdown-body table {
+	display: block;
+	width: 100%;
+	overflow: auto;
+	word-break: normal;
+	word-break: keep-all;
+}
+
+.markdown-body table th {
+	font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+	padding: 6px 13px;
+	border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+	background-color: #f8f8f8;
+}
+
+.markdown-body img {
+	max-width: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.markdown-body span.frame {
+	display: block;
+	overflow: hidden;
+}
+
+.markdown-body span.frame>span {
+	display: block;
+	float: left;
+	width: auto;
+	padding: 7px;
+	margin: 13px 0 0;
+	overflow: hidden;
+	border: 1px solid #ddd;
+}
+
+.markdown-body span.frame span img {
+	display: block;
+	float: left;
+}
+
+.markdown-body span.frame span span {
+	display: block;
+	padding: 5px 0 0;
+	clear: both;
+	color: #333;
+}
+
+.markdown-body span.align-center {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+.markdown-body span.align-center>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+.markdown-body span.align-center span img {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.markdown-body span.align-right {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+.markdown-body span.align-right>span {
+	display: block;
+	margin: 13px 0 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+.markdown-body span.align-right span img {
+	margin: 0;
+	text-align: right;
+}
+
+.markdown-body span.float-left {
+	display: block;
+	float: left;
+	margin-right: 13px;
+	overflow: hidden;
+}
+
+.markdown-body span.float-left span {
+	margin: 13px 0 0;
+}
+
+.markdown-body span.float-right {
+	display: block;
+	float: right;
+	margin-left: 13px;
+	overflow: hidden;
+}
+
+.markdown-body span.float-right>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+.markdown-body code,.markdown-body tt {
+	padding: 0;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	margin: 0;
+	font-size: 85%;
+	background-color: rgba(0,0,0,0.04);
+	border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after,
+.markdown-body tt:before,
+.markdown-body tt:after {
+	letter-spacing: -0.2em;
+	content: "\00a0";
+}
+
+.markdown-body code br,
+.markdown-body tt br {
+	display: none;
+}
+
+.markdown-body del code {
+	text-decoration: inherit;
+}
+
+.markdown-body pre>code {
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	word-break: normal;
+	white-space: pre;
+	background: transparent;
+	border: 0;
+}
+
+.markdown-body .highlight {
+	margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f7f7f7;
+	border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+	margin-bottom: 0;
+	word-break: normal;
+}
+
+.markdown-body pre {
+	word-wrap: normal;
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+	display: inline;
+	max-width: initial;
+	padding: 0;
+	margin: 0;
+	overflow: initial;
+	line-height: inherit;
+	word-wrap: normal;
+	background-color: transparent;
+	border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after,
+.markdown-body pre tt:before,
+.markdown-body pre tt:after {
+	content: normal;
+}
+
+.highlight .pl-coc,
+.highlight .pl-entl,
+.highlight .pl-entm,
+.highlight .pl-eoa,
+.highlight .pl-mai .pl-sf,
+.highlight .pl-mm,
+.highlight .pl-pdv,
+.highlight .pl-sc,
+.highlight .pl-som,
+.highlight .pl-sr,
+.highlight .pl-v,
+.highlight .pl-vpf {
+	color: #0086b3;
+}
+.highlight .pl-eoac,
+.highlight .pl-mdht,
+.highlight .pl-mi1,
+.highlight .pl-mri,
+.highlight .pl-va,
+.highlight .pl-vpu {
+	color: #008080;
+}
+.highlight .pl-c,
+.highlight .pl-pdc {
+	color: #b4b7b4;
+	font-style: italic;
+}
+.highlight .pl-k,
+.highlight .pl-ko,
+.highlight .pl-kolp,
+.highlight .pl-mc,
+.highlight .pl-mr,
+.highlight .pl-ms,
+.highlight .pl-s,
+.highlight .pl-sok,
+.highlight .pl-st {
+	color: #6e5494;
+}
+.highlight .pl-ef,
+.highlight .pl-enf,
+.highlight .pl-enm,
+.highlight .pl-entc,
+.highlight .pl-eoi,
+.highlight .pl-sf,
+.highlight .pl-smc {
+	color: #d12089;
+}
+.highlight .pl-ens,
+.highlight .pl-eoai,
+.highlight .pl-kos,
+.highlight .pl-mh .pl-pdh,
+.highlight .pl-mp,
+.highlight .pl-pde,
+.highlight .pl-stp {
+	color: #458;
+}
+.highlight .pl-enti {
+	color: #d12089;
+	font-weight: bold;
+}
+.highlight .pl-cce,
+.highlight .pl-enc,
+.highlight .pl-kou,
+.highlight .pl-mq {
+	color: #f93;
+}
+.highlight .pl-mp1 .pl-sf {
+	color: #458;
+	font-weight: bold;
+}
+.highlight .pl-cos,
+.highlight .pl-ent,
+.highlight .pl-md,
+.highlight .pl-mdhf,
+.highlight .pl-ml,
+.highlight .pl-pdc1,
+.highlight .pl-pds,
+.highlight .pl-s1,
+.highlight .pl-scp,
+.highlight .pl-sol {
+	color: #df5000;
+}
+.highlight .pl-c1,
+.highlight .pl-cn,
+.highlight .pl-pse,
+.highlight .pl-pse .pl-s2,
+.highlight .pl-vi {
+	color: #a31515;
+}
+.highlight .pl-mb,
+.highlight .pl-pdb {
+	color: #df5000;
+	font-weight: bold;
+}
+.highlight .pl-mi,
+.highlight .pl-pdi {
+	color: #6e5494;
+	font-style: italic;
+}
+.highlight .pl-ms1 {
+	background-color: #f5f5f5;
+}
+.highlight .pl-mdh,
+.highlight .pl-mdi {
+	font-weight: bold;
+}
+.highlight .pl-mdr {
+	color: #0086b3;
+	font-weight: bold;
+}
+.highlight .pl-s2 {
+	color: #333;
+}
+.highlight .pl-ii {
+	background-color: #df5000;
+	color: #fff;
+}
+.highlight .pl-ib {
+	background-color: #f93;
+}
+.highlight .pl-id {
+	background-color: #a31515;
+	color: #fff;
+}
+.highlight .pl-iu {
+	background-color: #b4b7b4;
+}
+.highlight .pl-mo {
+	color: #969896;
+}
+
+</style>
+
+
+<script type="text/javascript">
+
+function getDocumentScrollTop() 
+{
+   var res = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset || 0;
+   // alert(res);
+   return res;
+}
+
+function setDocumentScrollTop(ypos) 
+{
+	window.scrollTo(0, ypos);
+}
+
+</script>
+
+
+</head>
+<body class="markdown-body">
+<h2> <a id="sql" class="anchor" href="#sql" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SQL</h2> 
+<p><strong>Most common commands:</strong><br /> SELECT - extracts data from a database<br /> UPDATE - updates data in a database<br /> DELETE - deletes data from a database<br /> INSERT INTO - inserts new data into a database<br /> CREATE DATABASE - creates a new database<br /> ALTER DATABASE - modifies a database<br /> CREATE TABLE - creates a new table<br /> ALTER TABLE - modifies a table<br /> DROP TABLE - deletes a table<br /> CREATE INDEX - creates an index (search key)<br /> DROP INDEX - deletes an index</p> 
+<p><em>exampe 1</em><br /> <code>SELECT DISTINCT Country FROM Customers;</code> - <strong>Avoid duplicated values</strong></p> 
+<p><em>example 2</em> - There is employees table, and each row has city. List the number of different employees cities:<br /> My first attempt was:<br /> <code>select count(*) from (select count(*) from employees group by city) mustHaveAlias</code><br /> How to do it:<br /> <code>SELECT COUNT(DISTINCT city) FROM employees;</code></p> 
+<blockquote> 
+</blockquote> 
+<p>-- Syntax for SQL Server and Azure SQL Database</p> 
+<p>&lt;search_condition&gt; ::=<br /> { [ NOT ] | ( &lt;search_condition&gt; ) }<br /> [ { AND | OR } [ NOT ] { | ( &lt;search_condition&gt; ) } ]<br /> [ ,...n ]</p> 
+<p> ::=<br /> { expression { = | &lt; &gt; | ! = | &gt; | &gt; = | ! &gt; | &lt; | &lt; = | ! &lt; } expression<br /> | string_expression [ NOT ] LIKE string_expression<br /> [ ESCAPE 'escape_character' ]<br /> | expression [ NOT ] BETWEEN expression AND expression<br /> | expression IS [ NOT ] NULL<br /> | CONTAINS<br /> ( { column | * } , '&lt;contains_search_condition&gt;' )<br /> | FREETEXT ( { column | * } , 'freetext_string' )<br /> | expression [ NOT ] IN ( subquery | expression [ ,...n ] )<br /> | expression { = | &lt; &gt; | ! = | &gt; | &gt; = | ! &gt; | &lt; | &lt; = | ! &lt; }<br /> { ALL | SOME | ANY} ( subquery )<br /> | EXISTS ( subquery ) }</p> 
+<p><strong>Order by</strong><br /> //TODO</p> 
+<p><strong>Insert into</strong></p> 
+<blockquote> 
+ <p>INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...);<br /> <code>insert into employees (city, name) values ('Test City', 'MILENI')</code> - order of the columns can<br /> be changed. Columns can be ommited if we insert all columns.</p> 
+</blockquote> 
+<p><strong>NULL Value</strong> - when left blank during record creation. ...where column_name IS (NOT) NULL</p> 
+<p><strong>Update</strong></p> 
+<pre lang="UPDATE"><code>SET column1 = value1, column2 = value2, ...  
+WHERE condition;
+</code></pre> 
+<p><strong>Delete</strong></p> 
+<pre><code>DELETE FROM table_name
+WHERE condition;
+</code></pre> 
+<p><strong>Min, Max, count, avg, sum</strong></p> 
+<pre><code>SELECT MIN(column_name)
+FROM table_name
+WHERE condition;
+</code></pre> 
+<p><strong>JOINS</strong> - INNER, LEFT, RIGHT, FULL<br /> Join <strong>clause</strong> - to combine rows from two or more tables. TableA, TableB - <strong>NOTE</strong> for each type of join, rows from both tables are combined together (each-with-each)???</p> 
+<ul> 
+ <li>INNER - Selects records from TableA and TableB where join condition is met.</li> 
+ <li>LEFT - Selects all records from TableA, along with records from TableB for which condition is met.</li> 
+ <li>RIGHT - Selects all records from TableB, along with records from TalbeA for which condition is met.</li> 
+ <li>FUL - Selects all reconds from TalbeA and TableB regardless of whether conditions are met or not.</li> 
+ <li> <em>self</em> - combined with itself</li> 
+</ul> 
+<p><strong>Join examples</strong><br /> <code>select * from tableA, tableB</code> - like <code>select * from tableA inner join tableB (on...)</code><br /> <code>select * from tableA left join tableB on 1 = 1</code> - same as ^^ since tableB rows always meet given condition.<br /> <code>select * from employees left join orders on employees.id = orders.epmployee_id</code> This simply<br /> prepends order information on employees table rows. If there is no matching order, fields will be NULL.</p> 
+<p><em>example 2</em> - there are two tables employees and orders;<br /> left join - all rows from left table will appear at least once. right join -||-</p> 
+<ul> 
+ <li>select all employees and order info no matter if they have made order or not:<br /> ```select * from employees left join orders on employees.id = orders.employee_id``</li> 
+ <li>select all users with orders (if each order is attached to some users, there won't be null columns):<br /> ```select * from employees right join orders on employees.id = orders.employee_id``</li> 
+</ul> 
+<p><strong>UNION</strong> - To combine resultSets from multiple select statements (they all should have same number of columns)<br /> UNION ALL - to support duplicated items.</p> 
+<pre><code>SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+</code></pre> 
+<p><strong>Group by</strong> - this statement is <strong>often</strong> used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns. I can even write:<br /> <code>select * from employees group by city</code> - If there are multiple rows with the same city, first one will be taken. =&gt; it groups all rows into one where key is city (values are overridden)</p> 
+<p><em>example 1</em> - count each city in employees table:<br /> attempt: <code>select city, count(city) from employees</code> - this gives you first city that appears and total count of rows =&gt; it needs <code>group by</code> at the end.<br /> <em>general rule</em> - every column that appears in select should appear in group by as well.</p> 
+<p><strong>Having</strong> - like <strong>where</strong> but applies after aggregate function.<br /> Example: Select cities that appear at lest twice in employees table.<br /> <code>select city, count(*) as num from employees group by city having num &gt;= 2</code></p> 
+<p><strong>Exists</strong></p> 
+<pre><code>SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
+</code></pre> 
+<p>Example - select employees that have at least one order:<br /> <code>select * from employees e where exists (select * from orders where orders.employee_id = e.id)</code></p> 
+<h3> <a id="sqlite" class="anchor" href="#sqlite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SQLite</h3> 
+<p>//TODO</p> 
+<h3> <a id="t-sql" class="anchor" href="#t-sql" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>T-SQL</h3> 
+<p><a href="https://www.tutorialspoint.com/t_sql/index.htm" rel="nofollow">t-sql on tutorialspoint</a></p> 
+<h3> <a id="more-examples" class="anchor" href="#more-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>More examples</h3> 
+<p><em>example 1</em><br /> <code>select * from employees where name in ('Milos', 'Marko', 'Stanko')</code></p> 
+<p><em>example 2</em> - <strong>Variables</strong> - must start with <em>@</em> otherwise it's treated as system variable.</p> 
+<pre><code>set @user = 'Milos';
+select @user
+</code></pre> 
+<p><em>example 3</em> select into variable:<br /> <code>select @maxSalary:=max(salary) from employees</code></p> 
+<p><strong>Transactions</strong> in <em>mysql</em><br /> set autocommit = 0 - to disable autocommit, otherwise changes are persistend on every update and can't rollback.</p> 
+<pre><code>start transaction; #automatically sets autocommit to 0
+select @A:=sum(salary) from table1 where type=1;
+update table2 set summary=@A where type=1;
+commit;
+</code></pre> 
+<p>If I try to update, then select to check changes, I will see updated table event before calling <strong>commit</strong><br /> but everything can be canceled with <strong>rollback</strong>. When commit, can't rollback anymore.</p> 
+<h2> <a id="normalization" class="anchor" href="#normalization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Normalization</h2> 
+<ul> 
+ <li>Normalization is a technique of organizing data into multiple related tables to minimize <strong>data redundancy</strong> </li> 
+</ul> 
+<ul> 
+ <li> <p>insertion anomaly - duplication data on insertion, sometimes maybe multiple rows</p> </li> 
+ <li> <p>updation anomaly - If each student holds branch info, like mailing list, and mailing list changes, we need to<br /> update every single row in students table.</p> </li> 
+ <li> <p>deletion anomaly - There is a students table that holds branch data as well (no branch table at all). If we<br /> delete all students, then all branch data will be lost.</p> </li> 
+ <li> <p><strong>1NF</strong> (First Normal form). 4 rules:</p> 
+  <ol> 
+   <li>single (atomic) data in columns (it depends how we treat data, for instance string is atomic but if we keep<br /> CSV like &quot;Java, C++&quot; then it's not atomic.</li> 
+   <li>values in the same column should be of the same domain(don't put name in 'created_date' column)</li> 
+   <li>all the columns have unique names</li> 
+   <li>the order in which data is stored doesn't matter</li> 
+  </ol> </li> 
+ <li> <p><strong>2NF</strong>. 2 Rules:</p> 
+  <ol> 
+   <li>Must be 1NF</li> 
+   <li>Should not have <strong>partial dependency</strong><br /> <strong>Functional dependency</strong> - all I need is <em>student_id</em> (primary key) and every other column depends on it,<br /> or can be fetched using it.<br /> <strong>Partial dependency</strong> - let's start with R{ABCD}, and the functional dependencies AB-&gt;CD and A-&gt;C.<br /> The only candidate key for R is AB. C and D are a nonprime attributes. C is functionally dependent on A.<br /> A is part of a candidate key. That's a partial dependency.<br /> A relation is said to be in 2NF if and only if it is in 1NF and every non key attribute is fully<br /> dependent on the primary key. After 2NF, we can still have redundant data.</li> 
+  </ol> </li> 
+</ul>
+</body>
+</html>
